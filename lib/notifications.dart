@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:youtube_home_demo/horizontal_categories.dart';
-import 'package:youtube_home_demo/show_dialog.dart';
+import 'package:youtube_home_demo/src/ui/widgets/horizontal_categories.dart';
+import 'package:youtube_home_demo/src/ui/widgets/show_dialog.dart';
 
 class Notifications extends StatefulWidget {
   const Notifications({

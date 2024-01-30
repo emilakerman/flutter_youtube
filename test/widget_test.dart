@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:youtube_home_demo/cast_alert.dart';
-import 'package:youtube_home_demo/horizontal_categories.dart';
+import 'package:youtube_home_demo/src/ui/widgets/cast_alert.dart';
+import 'package:youtube_home_demo/src/ui/widgets/horizontal_categories.dart';
 import 'package:youtube_home_demo/main.dart';
 
 void main() {

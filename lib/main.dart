@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:youtube_home_demo/cast_alert.dart';
-import 'package:youtube_home_demo/horizontal_categories.dart';
+import 'package:youtube_home_demo/src/ui/widgets/cast_alert.dart';
+import 'package:youtube_home_demo/src/ui/widgets/horizontal_categories.dart';
 import 'package:youtube_home_demo/notifications.dart';
-import 'package:youtube_home_demo/show_dialog.dart';
-import 'package:youtube_home_demo/youtube_info_widget.dart';
-import 'package:youtube_home_demo/youtube_short.dart';
+import 'package:youtube_home_demo/src/ui/widgets/show_dialog.dart';
+import 'package:youtube_home_demo/src/ui/widgets/youtube_info_widget.dart';
+import 'package:youtube_home_demo/src/ui/widgets/youtube_short.dart';
 
 void main() {
   runApp(
