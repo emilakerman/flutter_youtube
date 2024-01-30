@@ -29,7 +29,7 @@ final GoRouter _router = GoRouter(
           path: Routes.notifications.name,
           name: Routes.notifications.name,
           builder: (BuildContext context, GoRouterState state) {
-            return Notifications();
+            return const Notifications();
           },
         ),
       ],
@@ -55,7 +55,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     List<Widget> topIconList = [
       IconButton(
-        key: Key("castButton"),
+        key: const Key("castButton"),
         icon: const Icon(Icons.cast),
         color: Colors.white,
         onPressed: () => showCastDialog(context),
@@ -127,20 +127,7 @@ class MainApp extends StatelessWidget {
             ],
           ),
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          backgroundColor: Colors.black,
-          fixedColor: Colors.white,
-          unselectedItemColor: Colors.white,
-          key: const Key("bottomNavBar"),
-          items: [
-            _buildIconButton(icon: Icons.home, label: "Home"),
-            _buildIconButton(icon: Icons.list, label: "Shorts"),
-            _buildIconButton(icon: Icons.add_circle_outline_rounded, label: "", size: 40),
-            _buildIconButton(icon: Icons.subscript, label: "Subs"),
-            _buildIconButton(icon: Icons.person, label: "You"),
-          ],
-        ),
+        bottomNavigationBar: const CustomBottomNavigationBar(),
       ),
     );
   }
@@ -236,18 +223,6 @@ class MainApp extends StatelessWidget {
           buildBottomSheetButton(Icons.feedback_outlined, "Send feedback"),
         ],
       ),
-    );
-  }
-
-  BottomNavigationBarItem _buildIconButton({
-    required IconData icon,
-    required String label,
-    double? size,
-  }) {
-    return BottomNavigationBarItem(
-      backgroundColor: Colors.black,
-      icon: Icon(icon, size: size ?? 25),
-      label: label,
     );
   }
 }
