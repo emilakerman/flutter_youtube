@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:youtube_home_demo/main.dart';
+
+import '../../../main.dart';
 
 class VideoInformationWidget extends StatelessWidget {
   final String title;

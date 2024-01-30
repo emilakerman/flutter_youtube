@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:youtube_home_demo/src/ui/widgets/horizontal_categories.dart';
-import 'package:youtube_home_demo/src/ui/widgets/show_dialog.dart';
+import '../../_src.dart';
 
 class Notifications extends StatefulWidget {
   const Notifications({super.key});
@@ -120,6 +119,7 @@ class _NotificationsState extends State<Notifications> {
           ],
         ),
       ),
+      bottomNavigationBar: const CustomBottomNavigationBar(),
     );
   }
 
@@ -193,7 +193,7 @@ class NotificationCard extends StatelessWidget {
             ),
             Text(
               timePosted,
-              style: TextStyle(fontSize: 14, color: Colors.grey),
+              style: const TextStyle(fontSize: 14, color: Colors.grey),
             ),
           ],
         ),

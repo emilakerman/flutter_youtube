@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:youtube_home_demo/src/ui/widgets/cast_alert.dart';
-import 'package:youtube_home_demo/src/ui/widgets/horizontal_categories.dart';
 import 'package:youtube_home_demo/main.dart';
+import 'package:youtube_home_demo/src/_src.dart';
 
 void main() {
   testWidgets("Testing if a button's bg color changs to white when clicked.",
