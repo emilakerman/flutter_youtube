@@ -11,7 +11,10 @@ void main() {
     final textButtonHoriz = find.byKey(const ValueKey("textButton0"));
 
     //execute test
-    await widgetTester.pumpWidget(const MaterialApp(home: HorizontalCategories()));
+    await widgetTester.pumpWidget(const MaterialApp(
+        home: HorizontalCategories(
+      isNotificationsScreen: false,
+    )));
     await widgetTester.tap(textButtonHoriz);
     await widgetTester.pump(); //rebuilds widget
 

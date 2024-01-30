@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 
 class HorizontalCategories extends StatefulWidget {
-  const HorizontalCategories({super.key});
+  final bool isNotificationsScreen;
+  final VoidCallback? onPressed;
+  const HorizontalCategories({
+    super.key,
+    required this.isNotificationsScreen,
+    this.onPressed,
+  });
 
   static const List<String> categories = [
     "All",
@@ -11,6 +17,10 @@ class HorizontalCategories extends StatefulWidget {
     "Comedy",
     "Anime",
     "Politics"
+  ];
+  static const List<String> notifications = [
+    "All",
+    "Mentions",
   ];
 
   @override
@@ -22,14 +32,20 @@ class _HorizontalCategoriesState extends State<HorizontalCategories> {
 
   @override
   Widget build(BuildContext context) {
+    List<String> buttonsStrings;
+    if (widget.isNotificationsScreen) {
+      buttonsStrings = HorizontalCategories.notifications;
+    } else {
+      buttonsStrings = HorizontalCategories.categories;
+    }
     return SizedBox(
       height: 40,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         padding: const EdgeInsets.symmetric(horizontal: 10),
-        itemCount: HorizontalCategories.categories.length,
+        itemCount: buttonsStrings.length,
         itemBuilder: (BuildContext context, int index) =>
-            _buildCategoryButton(HorizontalCategories.categories[index], index),
+            _buildCategoryButton(buttonsStrings[index], index),
         separatorBuilder: (BuildContext context, int index) => const SizedBox(width: 10),
       ),
     );
@@ -43,7 +59,14 @@ class _HorizontalCategoriesState extends State<HorizontalCategories> {
         backgroundColor:
             selectedIndex == index ? Colors.white : const Color.fromARGB(255, 62, 60, 60),
       ),
-      onPressed: () => setState(() => selectedIndex = index),
+      onPressed: () {
+        setState(() => selectedIndex = index);
+        if (text == "Mentions") {
+          print("Calling onPressed callback");
+
+          widget.onPressed?.call();
+        }
+      },
       child: Text(text),
     );
   }

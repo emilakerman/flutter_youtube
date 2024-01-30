@@ -1,22 +1,56 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:youtube_home_demo/cast_alert.dart';
 import 'package:youtube_home_demo/horizontal_categories.dart';
+import 'package:youtube_home_demo/notifications.dart';
+import 'package:youtube_home_demo/show_dialog.dart';
 import 'package:youtube_home_demo/youtube_info_widget.dart';
 import 'package:youtube_home_demo/youtube_short.dart';
 
 void main() {
-  runApp(const MaterialApp(home: MainApp()));
+  runApp(
+    const ProviderScope(
+      child: MyApp(),
+    ),
+  );
 }
 
-void _showDialog(BuildContext context) {
-  showDialog(
-    context: context,
-    builder: (BuildContext context) {
-      return const CastAlert(
-        content: 'This is the content of the alert dialog.',
-      );
-    },
-  );
+enum Routes { notifications }
+
+final GlobalKey<NavigatorState> _rootNavigatorKey = GlobalKey<NavigatorState>();
+
+final GoRouter _router = GoRouter(
+  navigatorKey: _rootNavigatorKey,
+  initialLocation: '/',
+  routes: [
+    GoRoute(
+      path: '/',
+      builder: (BuildContext context, GoRouterState state) {
+        return const MainApp();
+      },
+      routes: [
+        GoRoute(
+          path: Routes.notifications.name,
+          name: Routes.notifications.name,
+          builder: (BuildContext context, GoRouterState state) {
+            return Notifications();
+          },
+        ),
+      ],
+    ),
+  ],
+);
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp.router(
+      routerConfig: _router,
+    );
+  }
 }
 
 class MainApp extends StatelessWidget {
@@ -29,10 +63,12 @@ class MainApp extends StatelessWidget {
         key: Key("castButton"),
         icon: const Icon(Icons.cast),
         color: Colors.white,
-        onPressed: () => _showDialog(context),
+        onPressed: () => showCastDialog(context),
       ),
       const SizedBox(width: 20),
-      const Icon(Icons.notifications_none, color: Colors.white),
+      InkWell(
+          onTap: () => context.goNamed(Routes.notifications.name),
+          child: const Icon(Icons.notifications_none, color: Colors.white)),
       const SizedBox(width: 20),
       const Icon(Icons.search, color: Colors.white),
       const SizedBox(width: 10),
@@ -58,7 +94,9 @@ class MainApp extends StatelessWidget {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              const HorizontalCategories(),
+              const HorizontalCategories(
+                isNotificationsScreen: false,
+              ),
               const SizedBox(height: 10),
               _buildShortsIconRow(),
               Column(
@@ -167,18 +205,7 @@ class MainApp extends StatelessWidget {
             onPressed: () => {
               showModalBottomSheet(
                 context: context,
-                builder: (context) => Container(
-                  color: const Color.fromARGB(255, 62, 60, 60),
-                  height: 100,
-                  width: MediaQuery.of(context).size.width,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      _buildShortsSheetButton(Icons.not_interested, "Not interested"),
-                      _buildShortsSheetButton(Icons.feedback_outlined, "Send feedback"),
-                    ],
-                  ),
-                ),
+                builder: (context) => _buildBottomSheetShorts(context),
               )
             },
           ),
@@ -202,18 +229,16 @@ class MainApp extends StatelessWidget {
     );
   }
 
-  Widget _buildShortsSheetButton(IconData icon, String text) {
-    return InkWell(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
+  Widget _buildBottomSheetShorts(BuildContext context) {
+    return Container(
+      color: const Color.fromARGB(255, 62, 60, 60),
+      height: 100,
+      width: MediaQuery.of(context).size.width,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          const SizedBox(width: 30),
-          Icon(icon, color: Colors.white),
-          const SizedBox(width: 20),
-          Text(
-            text,
-            style: const TextStyle(color: Colors.white),
-          ),
+          buildBottomSheetButton(Icons.not_interested, "Not interested"),
+          buildBottomSheetButton(Icons.feedback_outlined, "Send feedback"),
         ],
       ),
     );
@@ -230,4 +255,21 @@ class MainApp extends StatelessWidget {
       label: label,
     );
   }
+}
+
+Widget buildBottomSheetButton(IconData icon, String text) {
+  return InkWell(
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        const SizedBox(width: 30),
+        Icon(icon, color: Colors.white),
+        const SizedBox(width: 20),
+        Text(
+          text,
+          style: const TextStyle(color: Colors.white),
+        ),
+      ],
+    ),
+  );
 }
