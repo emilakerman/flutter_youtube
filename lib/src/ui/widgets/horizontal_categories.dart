@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 
 class HorizontalCategories extends StatefulWidget {
   final bool isNotificationsScreen;
-  final VoidCallback? onPressed;
+  final VoidCallback? onPressedMention;
+  final VoidCallback? onPressedAll;
   const HorizontalCategories({
     super.key,
     required this.isNotificationsScreen,
-    this.onPressed,
+    this.onPressedMention,
+    this.onPressedAll,
   });
 
   static const List<String> categories = [
@@ -62,9 +64,9 @@ class _HorizontalCategoriesState extends State<HorizontalCategories> {
       onPressed: () {
         setState(() => selectedIndex = index);
         if (text == "Mentions") {
-          print("Calling onPressed callback");
-
-          widget.onPressed?.call();
+          widget.onPressedMention?.call();
+        } else if (text == "All") {
+          widget.onPressedAll?.call();
         }
       },
       child: Text(text),

@@ -3,9 +3,7 @@ import 'package:youtube_home_demo/src/ui/widgets/horizontal_categories.dart';
 import 'package:youtube_home_demo/src/ui/widgets/show_dialog.dart';
 
 class Notifications extends StatefulWidget {
-  const Notifications({
-    super.key,
-  });
+  const Notifications({super.key});
 
   @override
   State<Notifications> createState() => _NotificationsState();
@@ -13,13 +11,20 @@ class Notifications extends StatefulWidget {
 
 class _NotificationsState extends State<Notifications> {
   bool isMentions = false;
+  void displayMentions() {
+    setState(() {
+      isMentions = true;
+    });
+  }
+
+  void displayAll() {
+    setState(() {
+      isMentions = false;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    void displayMentions() {
-      isMentions = true;
-    }
-
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
@@ -49,7 +54,8 @@ class _NotificationsState extends State<Notifications> {
             const SizedBox(height: 20),
             HorizontalCategories(
               isNotificationsScreen: true,
-              onPressed: displayMentions,
+              onPressedMention: displayMentions,
+              onPressedAll: displayAll,
             ),
             const SizedBox(height: 20),
             !isMentions
