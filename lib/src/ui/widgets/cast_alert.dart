@@ -8,7 +8,7 @@ class CastAlert extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      key: Key("alertDialogKey"),
+      key: const Key("alertDialogKey"),
       backgroundColor: const Color.fromARGB(255, 62, 60, 60),
       iconColor: Colors.white,
       title: const Text(

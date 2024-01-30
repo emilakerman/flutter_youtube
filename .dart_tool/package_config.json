@@ -50,14 +50,32 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "flutter_riverpod",
+      "rootUri": "file:///Users/emil/.pub-cache/hosted/pub.dev/flutter_riverpod-2.4.9",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "flutter_test",
       "rootUri": "file:///Users/emil/documents/Flutter/flutter/packages/flutter_test",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
     {
+      "name": "flutter_web_plugins",
+      "rootUri": "file:///Users/emil/documents/Flutter/flutter/packages/flutter_web_plugins",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
       "name": "font_awesome_flutter",
       "rootUri": "file:///Users/emil/.pub-cache/hosted/pub.dev/font_awesome_flutter-10.6.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "go_router",
+      "rootUri": "file:///Users/emil/.pub-cache/hosted/pub.dev/go_router-13.1.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -86,6 +104,12 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "logging",
+      "rootUri": "file:///Users/emil/.pub-cache/hosted/pub.dev/logging-1.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
       "name": "matcher",
       "rootUri": "file:///Users/emil/.pub-cache/hosted/pub.dev/matcher-0.12.16+1",
       "packageUri": "lib/",
@@ -110,6 +134,12 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "riverpod",
+      "rootUri": "file:///Users/emil/.pub-cache/hosted/pub.dev/riverpod-2.4.9",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "sky_engine",
       "rootUri": "file:///Users/emil/documents/Flutter/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
@@ -126,6 +156,12 @@
       "rootUri": "file:///Users/emil/.pub-cache/hosted/pub.dev/stack_trace-1.11.1",
       "packageUri": "lib/",
       "languageVersion": "2.18"
+    },
+    {
+      "name": "state_notifier",
+      "rootUri": "file:///Users/emil/.pub-cache/hosted/pub.dev/state_notifier-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "stream_channel",
@@ -170,7 +206,7 @@
       "languageVersion": "3.3"
     }
   ],
-  "generated": "2024-01-18T21:46:36.223346Z",
+  "generated": "2024-01-30T15:47:18.610201Z",
   "generator": "pub",
   "generatorVersion": "3.3.0-279.0.dev"
 }
