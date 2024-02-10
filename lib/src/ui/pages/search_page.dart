@@ -37,7 +37,7 @@ class _SearchPageState extends State<SearchPage> {
             ),
           ),
         ),
-        actions: const [
+        actions: [
           Padding(
             padding: EdgeInsets.only(right: 15.0),
             child: Stack(
@@ -49,7 +49,9 @@ class _SearchPageState extends State<SearchPage> {
                   top: 0,
                   bottom: 0,
                   // TODO(Any): Change to iconbutton with alert?
-                  child: Icon(Icons.mic, color: Colors.white),
+                  child: InkWell(
+                      onTap: () => showVoiceControlDialogue(context),
+                      child: Icon(Icons.mic, color: Colors.white)),
                 ),
               ],
             ),
