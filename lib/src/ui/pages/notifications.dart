@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:youtube_home_demo/main.dart';
 import '../../_src.dart';
 
 class Notifications extends StatefulWidget {
@@ -42,9 +44,18 @@ class _NotificationsState extends State<Notifications> {
             onPressed: () => showCastDialog(context),
           ),
           const SizedBox(width: 20),
-          const Icon(Icons.search, color: Colors.white),
+          InkWell(
+              onTap: () => context.pushNamed(Routes.search.name),
+              child: const Icon(Icons.search, color: Colors.white)),
           const SizedBox(width: 20),
-          const Icon(Icons.more_vert, color: Colors.white),
+          InkWell(
+              onTap: () => {
+                    showModalBottomSheet(
+                      context: context,
+                      builder: (context) => _buildBottomSheetNotifications(context),
+                    ),
+                  },
+              child: const Icon(Icons.more_vert, color: Colors.white)),
         ],
       ),
       body: SingleChildScrollView(
@@ -123,6 +134,20 @@ class _NotificationsState extends State<Notifications> {
     );
   }
 
+  Widget _buildBottomSheetNotifications(BuildContext context) {
+    return Container(
+      color: const Color.fromARGB(255, 62, 60, 60),
+      height: 70,
+      width: MediaQuery.of(context).size.width,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          buildBottomSheetButton(Icons.feedback_outlined, "Help and feedback"),
+        ],
+      ),
+    );
+  }
+
   Widget _buildTitleText({required String text}) {
     return Row(
       children: [
@@ -181,10 +206,15 @@ class NotificationCard extends StatelessWidget {
                   width: 120,
                 ),
                 const SizedBox(width: 5),
-                const Column(
+                Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Icon(Icons.more_vert, color: Colors.white),
+                    InkWell(
+                        onTap: () => showModalBottomSheet(
+                              context: context,
+                              builder: (context) => _buildBottomSheetVideoRow(context),
+                            ),
+                        child: Icon(Icons.more_vert, color: Colors.white)),
                     Icon(Icons.more_vert, color: Colors.transparent),
                     Icon(Icons.more_vert, color: Colors.transparent),
                   ],
@@ -198,6 +228,24 @@ class NotificationCard extends StatelessWidget {
           ],
         ),
       ],
+    );
+  }
+
+  Widget _buildBottomSheetVideoRow(BuildContext context) {
+    return Container(
+      color: const Color.fromARGB(255, 62, 60, 60),
+      height: 100,
+      width: MediaQuery.of(context).size.width,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          buildBottomSheetButton(Icons.hide_source_outlined, "Hide this notification"),
+          buildBottomSheetButton(
+            Icons.notifications_off_outlined,
+            "Turn off all notifications for this channel",
+          ),
+        ],
+      ),
     );
   }
 }
