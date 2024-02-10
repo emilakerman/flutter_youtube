@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:youtube_home_demo/src/ui/pages/_pages.dart';
+import 'package:youtube_home_demo/src/ui/pages/search_page.dart';
 import 'src/_src.dart';
 
 void main() {
@@ -11,7 +13,7 @@ void main() {
   );
 }
 
-enum Routes { notifications }
+enum Routes { notifications, search }
 
 final GlobalKey<NavigatorState> _rootNavigatorKey = GlobalKey<NavigatorState>();
 
@@ -30,6 +32,13 @@ final GoRouter _router = GoRouter(
           name: Routes.notifications.name,
           builder: (BuildContext context, GoRouterState state) {
             return const Notifications();
+          },
+        ),
+        GoRoute(
+          path: Routes.search.name,
+          name: Routes.search.name,
+          builder: (BuildContext context, GoRouterState state) {
+            return const SearchPage();
           },
         ),
       ],
@@ -65,7 +74,9 @@ class MainApp extends StatelessWidget {
           onTap: () => context.goNamed(Routes.notifications.name),
           child: const Icon(Icons.notifications_none, color: Colors.white)),
       const SizedBox(width: 20),
-      const Icon(Icons.search, color: Colors.white),
+      InkWell(
+          onTap: () => context.goNamed(Routes.search.name),
+          child: const Icon(Icons.search, color: Colors.white)),
       const SizedBox(width: 10),
     ];
 
