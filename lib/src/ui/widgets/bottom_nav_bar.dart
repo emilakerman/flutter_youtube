@@ -12,10 +12,12 @@ class CustomBottomNavigationBar extends StatelessWidget {
       unselectedItemColor: Colors.white,
       key: const Key("bottomNavBar"),
       items: [
+        // TODO(Any): Use this image as the shorts icon somehow.
+        // Image(image: AssetImage('/assets/images/shorts_icon_1.png'),)
         _buildIconButton(icon: Icons.home, label: "Home"),
         _buildIconButton(icon: Icons.list, label: "Shorts"),
         _buildIconButton(icon: Icons.add_circle_outline_rounded, label: "", size: 40),
-        _buildIconButton(icon: Icons.subscript, label: "Subs"),
+        _buildIconButton(icon: Icons.subscriptions_outlined, label: "Subs"),
         _buildIconButton(icon: Icons.person, label: "You"),
       ],
     );
