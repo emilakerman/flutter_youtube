@@ -4,3 +4,5 @@ export 'show_dialog.dart';
 export 'youtube_info_widget.dart';
 export 'bottom_nav_bar.dart';
 export 'search_row_item.dart';
+export 'voice_control_alert.dart';
+export 'notification_card.dart';
