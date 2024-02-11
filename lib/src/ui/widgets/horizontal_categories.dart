@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_home_demo/src/_src.dart';
 
 class HorizontalCategories extends StatefulWidget {
   final bool isNotificationsScreen;
@@ -44,11 +45,12 @@ class _HorizontalCategoriesState extends State<HorizontalCategories> {
       height: 40,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
-        padding: const EdgeInsets.symmetric(horizontal: 10),
+        padding: const EdgeInsets.symmetric(horizontal: YoutubeSizes.medium),
         itemCount: buttonsStrings.length,
         itemBuilder: (BuildContext context, int index) =>
             _buildCategoryButton(buttonsStrings[index], index),
-        separatorBuilder: (BuildContext context, int index) => const SizedBox(width: 10),
+        separatorBuilder: (BuildContext context, int index) =>
+            const SizedBox(width: YoutubeSizes.medium),
       ),
     );
   }
@@ -57,9 +59,8 @@ class _HorizontalCategoriesState extends State<HorizontalCategories> {
     return TextButton(
       key: Key("textButton$index"),
       style: TextButton.styleFrom(
-        foregroundColor: selectedIndex == index ? Colors.black : Colors.white,
-        backgroundColor:
-            selectedIndex == index ? Colors.white : const Color.fromARGB(255, 62, 60, 60),
+        foregroundColor: selectedIndex == index ? YoutubeColors.black : YoutubeColors.white,
+        backgroundColor: selectedIndex == index ? YoutubeColors.white : YoutubeColors.lightGrey,
       ),
       onPressed: () {
         setState(() => selectedIndex = index);

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_home_demo/main.dart';
+import 'package:youtube_home_demo/src/_src.dart';
 
 class NotificationCard extends StatelessWidget {
   const NotificationCard({
@@ -20,9 +21,9 @@ class NotificationCard extends StatelessWidget {
         const Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Icon(Icons.person, color: Colors.white),
-            Icon(Icons.person, color: Colors.transparent),
-            Icon(Icons.person, color: Colors.transparent),
+            Icon(Icons.person, color: YoutubeColors.white),
+            Icon(Icons.person, color: YoutubeColors.transparent),
+            Icon(Icons.person, color: YoutubeColors.transparent),
           ],
         ),
         const SizedBox(width: 10),
@@ -37,16 +38,16 @@ class NotificationCard extends StatelessWidget {
                     title,
                     overflow: TextOverflow.visible,
                     style: const TextStyle(
-                        fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+                        fontSize: 16, fontWeight: FontWeight.bold, color: YoutubeColors.white),
                   ),
                 ),
-                const SizedBox(width: 20),
+                const SizedBox(width: YoutubeSizes.xLarge),
                 Image(
                   image: AssetImage("assets/images/$imageUrl.jpeg"),
                   height: 90,
                   width: 120,
                 ),
-                const SizedBox(width: 5),
+                const SizedBox(width: YoutubeSizes.xSmall),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
@@ -55,16 +56,16 @@ class NotificationCard extends StatelessWidget {
                               context: context,
                               builder: (context) => _buildBottomSheetVideoRow(context),
                             ),
-                        child: Icon(Icons.more_vert, color: Colors.white)),
-                    Icon(Icons.more_vert, color: Colors.transparent),
-                    Icon(Icons.more_vert, color: Colors.transparent),
+                        child: Icon(Icons.more_vert, color: YoutubeColors.white)),
+                    Icon(Icons.more_vert, color: YoutubeColors.transparent),
+                    Icon(Icons.more_vert, color: YoutubeColors.transparent),
                   ],
                 ),
               ],
             ),
             Text(
               timePosted,
-              style: const TextStyle(fontSize: 14, color: Colors.grey),
+              style: const TextStyle(fontSize: 14, color: YoutubeColors.grey),
             ),
           ],
         ),
@@ -74,7 +75,7 @@ class NotificationCard extends StatelessWidget {
 
   Widget _buildBottomSheetVideoRow(BuildContext context) {
     return Container(
-      color: const Color.fromARGB(255, 62, 60, 60),
+      color: YoutubeColors.lightGrey,
       height: 100,
       width: MediaQuery.of(context).size.width,
       child: Column(

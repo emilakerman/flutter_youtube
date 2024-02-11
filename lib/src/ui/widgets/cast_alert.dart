@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_home_demo/src/_src.dart';
 
 class CastAlert extends StatelessWidget {
   final String content;
@@ -9,11 +10,11 @@ class CastAlert extends StatelessWidget {
   Widget build(BuildContext context) {
     return AlertDialog(
       key: const Key("alertDialogKey"),
-      backgroundColor: const Color.fromARGB(255, 62, 60, 60),
-      iconColor: Colors.white,
+      backgroundColor: YoutubeColors.lightGrey,
+      iconColor: YoutubeColors.white,
       title: const Text(
         "Connect to a device",
-        style: TextStyle(color: Colors.white),
+        style: TextStyle(color: YoutubeColors.white),
       ),
       content: ConstrainedBox(
         constraints: BoxConstraints(
@@ -57,14 +58,14 @@ class CastAlert extends StatelessWidget {
           child: isSearch
               ? const CircularProgressIndicator(
                   strokeWidth: 3,
-                  color: Colors.blue,
+                  color: YoutubeColors.blue,
                 )
-              : Icon(icon, color: Colors.white),
+              : Icon(icon, color: YoutubeColors.white),
         ),
-        const SizedBox(width: 20),
+        const SizedBox(width: YoutubeSizes.xLarge),
         Text(
           text,
-          style: const TextStyle(color: Colors.white),
+          style: const TextStyle(color: YoutubeColors.white),
         ),
       ],
     );

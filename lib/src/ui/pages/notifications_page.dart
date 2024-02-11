@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:youtube_home_demo/main.dart';
-import '../../_src.dart';
+import 'package:youtube_home_demo/src/ui/_ui.dart';
+import 'package:youtube_home_demo/src/_src.dart';
 
 class Notifications extends StatefulWidget {
   const Notifications({super.key});
@@ -43,11 +44,11 @@ class _NotificationsState extends State<Notifications> {
             color: Colors.white,
             onPressed: () => showCastDialog(context),
           ),
-          const SizedBox(width: 20),
+          const SizedBox(width: YoutubeSizes.xLarge),
           InkWell(
               onTap: () => context.pushNamed(Routes.search.name),
               child: const Icon(Icons.search, color: Colors.white)),
-          const SizedBox(width: 20),
+          const SizedBox(width: YoutubeSizes.xLarge),
           InkWell(
               onTap: () => {
                     showModalBottomSheet(
@@ -61,16 +62,16 @@ class _NotificationsState extends State<Notifications> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const SizedBox(height: 20),
+            const SizedBox(height: YoutubeSizes.xLarge),
             HorizontalCategories(
               isNotificationsScreen: true,
               onPressedMention: displayMentions,
               onPressedAll: displayAll,
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: YoutubeSizes.xLarge),
             !isMentions
                 ? Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                    padding: const EdgeInsets.symmetric(horizontal: YoutubeSizes.xSmall),
                     child: Column(
                       children: [
                         _buildTitleText(text: "Important"),
@@ -122,7 +123,7 @@ class _NotificationsState extends State<Notifications> {
                 : Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const SizedBox(height: 100),
+                      const SizedBox(height: YoutubeSizes.xLarge * 5),
                       Text("@", style: TextStyle(color: Colors.grey.shade600, fontSize: 150)),
                       const Text("No mentions", style: TextStyle(color: Colors.white)),
                     ],
@@ -136,7 +137,7 @@ class _NotificationsState extends State<Notifications> {
 
   Widget _buildBottomSheetNotifications(BuildContext context) {
     return Container(
-      color: const Color.fromARGB(255, 62, 60, 60),
+      color: YoutubeColors.lightGrey,
       height: 70,
       width: MediaQuery.of(context).size.width,
       child: Column(
@@ -153,7 +154,7 @@ class _NotificationsState extends State<Notifications> {
       children: [
         Text(
           text,
-          style: const TextStyle(color: Colors.white, fontSize: 16),
+          style: const TextStyle(color: YoutubeColors.white, fontSize: 16),
         ),
       ],
     );

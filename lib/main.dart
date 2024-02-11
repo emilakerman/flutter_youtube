@@ -66,30 +66,30 @@ class MainApp extends StatelessWidget {
       IconButton(
         key: const Key("castButton"),
         icon: const Icon(Icons.cast),
-        color: Colors.white,
+        color: YoutubeColors.white,
         onPressed: () => showCastDialog(context),
       ),
-      const SizedBox(width: 20),
+      const SizedBox(width: YoutubeSizes.xLarge),
       InkWell(
           onTap: () => context.goNamed(Routes.notifications.name),
-          child: const Icon(Icons.notifications_none, color: Colors.white)),
-      const SizedBox(width: 20),
+          child: const Icon(Icons.notifications_none, color: YoutubeColors.white)),
+      const SizedBox(width: YoutubeSizes.xLarge),
       InkWell(
           onTap: () => context.goNamed(Routes.search.name),
-          child: const Icon(Icons.search, color: Colors.white)),
-      const SizedBox(width: 10),
+          child: const Icon(Icons.search, color: YoutubeColors.white)),
+      const SizedBox(width: YoutubeSizes.medium),
     ];
 
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.black,
+        backgroundColor: YoutubeColors.black,
         appBar: AppBar(
-          backgroundColor: Colors.transparent,
+          backgroundColor: YoutubeColors.transparent,
           actions: [
-            const SizedBox(width: 10),
+            const SizedBox(width: YoutubeSizes.medium),
             const Image(
               image: AssetImage("assets/images/youtube.logo.png"),
-              height: 25,
+              height: YoutubeSizes.xxLarge,
             ),
             const Spacer(),
             Row(
@@ -103,7 +103,7 @@ class MainApp extends StatelessWidget {
               const HorizontalCategories(
                 isNotificationsScreen: false,
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: YoutubeSizes.medium),
               _buildShortsIconRow(),
               Column(
                 children: [
@@ -126,13 +126,13 @@ class MainApp extends StatelessWidget {
                     details: 'Flutter Man - 115K views - 2 hours ago',
                     thumbImage: "thumb1",
                   ),
-                  const SizedBox(height: 5),
+                  const SizedBox(height: YoutubeSizes.xSmall),
                   const VideoInformationWidget(
                     title: 'New Spicy Fireship Video',
                     details: 'Fireship - 55M views - 9 hours ago',
                     thumbImage: "thumb2",
                   ),
-                  const SizedBox(height: 25),
+                  const SizedBox(height: YoutubeSizes.xxLarge),
                 ],
               )
             ],
@@ -146,16 +146,16 @@ class MainApp extends StatelessWidget {
   Widget _buildShortsIconRow() {
     return const Row(
       children: [
-        SizedBox(width: 10),
+        SizedBox(width: YoutubeSizes.medium),
         Image(
           image: AssetImage("assets/images/Youtube_shorts_icon.svg.png"),
           height: 35,
         ),
-        SizedBox(width: 20),
+        SizedBox(width: YoutubeSizes.xLarge),
         Text(
           "Shorts",
           style: TextStyle(
-            color: Colors.white,
+            color: YoutubeColors.white,
             fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
@@ -170,7 +170,7 @@ class MainApp extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         _buildShortsCard(image1, text1, context),
-        const SizedBox(width: 10),
+        const SizedBox(width: YoutubeSizes.medium),
         _buildShortsCard(image2, text2, context),
       ],
     );
@@ -193,7 +193,7 @@ class MainApp extends StatelessWidget {
           child: IconButton(
             icon: const Icon(
               Icons.more_vert,
-              color: Colors.white,
+              color: YoutubeColors.white,
             ),
             onPressed: () => {
               showModalBottomSheet(
@@ -212,7 +212,7 @@ class MainApp extends StatelessWidget {
               text,
               overflow: TextOverflow.clip,
               style: const TextStyle(
-                color: Colors.white,
+                color: YoutubeColors.white,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -224,7 +224,7 @@ class MainApp extends StatelessWidget {
 
   Widget _buildBottomSheetShorts(BuildContext context) {
     return Container(
-      color: const Color.fromARGB(255, 62, 60, 60),
+      color: YoutubeColors.lightGrey,
       height: 100,
       width: MediaQuery.of(context).size.width,
       child: Column(
@@ -243,12 +243,12 @@ Widget buildBottomSheetButton(IconData icon, String text) {
     child: Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        const SizedBox(width: 30),
-        Icon(icon, color: Colors.white),
-        const SizedBox(width: 20),
+        const SizedBox(width: YoutubeSizes.xxxLarge + 2),
+        Icon(icon, color: YoutubeColors.white),
+        const SizedBox(width: YoutubeSizes.xLarge),
         Text(
           text,
-          style: const TextStyle(color: Colors.white),
+          style: const TextStyle(color: YoutubeColors.white),
         ),
       ],
     ),
