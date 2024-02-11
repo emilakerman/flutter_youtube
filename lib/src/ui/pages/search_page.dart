@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:youtube_home_demo/src/ui/_ui.dart';
 
 class SearchPage extends StatefulWidget {
@@ -13,27 +12,27 @@ class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: YoutubeColors.black,
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: YoutubeColors.black,
         leading: const BackButton(
-          color: Colors.white,
+          color: YoutubeColors.white,
         ),
         title: TextField(
           style: const TextStyle(
-            color: Colors.white,
+            color: YoutubeColors.white,
           ),
           decoration: InputDecoration(
             isDense: true,
             filled: true,
             fillColor: const Color(0xff272727),
             enabledBorder: UnderlineInputBorder(
-              borderSide: const BorderSide(color: Colors.transparent),
+              borderSide: const BorderSide(color: YoutubeColors.transparent),
               borderRadius: BorderRadius.circular(25.7),
             ),
             hintText: 'Search YouTube',
             hintStyle: const TextStyle(
-              color: Colors.grey,
+              color: YoutubeColors.grey,
             ),
           ),
         ),
@@ -51,7 +50,7 @@ class _SearchPageState extends State<SearchPage> {
                   // TODO(Any): Change to iconbutton with alert?
                   child: InkWell(
                       onTap: () => showVoiceControlDialogue(context),
-                      child: Icon(Icons.mic, color: Colors.white)),
+                      child: Icon(Icons.mic, color: YoutubeColors.white)),
                 ),
               ],
             ),
@@ -61,7 +60,7 @@ class _SearchPageState extends State<SearchPage> {
       body: const SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 20),
+            SizedBox(height: YoutubeSizes.xLarge),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 15.0),
               child: Column(

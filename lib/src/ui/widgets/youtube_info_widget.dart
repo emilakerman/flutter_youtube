@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
-import '../../../main.dart';
+import 'package:youtube_home_demo/src/_src.dart';
+import 'package:youtube_home_demo/main.dart';
 
 class VideoInformationWidget extends StatelessWidget {
   final String title;
@@ -27,7 +27,7 @@ class VideoInformationWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             const Icon(Icons.person, color: Colors.white),
-            const SizedBox(width: 10),
+            const SizedBox(width: YoutubeSizes.medium),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -48,12 +48,12 @@ class VideoInformationWidget extends StatelessWidget {
                       },
                       child: const Icon(
                         Icons.more_vert_rounded,
-                        color: Colors.white,
+                        color: YoutubeColors.white,
                       ),
                     ),
                   ],
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: YoutubeSizes.medium),
                 Text(
                   details,
                   style: const TextStyle(fontSize: 14, color: Colors.grey),
@@ -69,7 +69,7 @@ class VideoInformationWidget extends StatelessWidget {
 
 Widget _buildBottomSheetVideos(BuildContext context) {
   return Container(
-    color: const Color.fromARGB(255, 62, 60, 60),
+    color: YoutubeColors.lightGrey,
     height: 500,
     width: MediaQuery.of(context).size.width * 0.97,
     child: Column(
