@@ -18,16 +18,20 @@ void main() {
     await widgetTester.pump(); //rebuilds widget
 
     //check output
-    final TextButton buttonWidget = widgetTester.widget(textButtonHoriz) as TextButton;
+    final TextButton buttonWidget =
+        widgetTester.widget(textButtonHoriz) as TextButton;
     final Color? actualColor = buttonWidget.style?.backgroundColor?.resolve(
       {MaterialState.selected},
     );
 
     expect(actualColor, Colors.white);
   });
-  testWidgets("Testing if an alert is displayed when the cast button is pressed.",
+  testWidgets(
+      "Testing if an alert is displayed when the cast button is pressed.",
       (WidgetTester widgetTester) async {
     await widgetTester.pumpWidget(const MaterialApp(home: MainApp()));
+
+    await widgetTester.pumpAndSettle();
 
     final castButton = find.byKey(const ValueKey("castButton"));
     expect(castButton, findsOneWidget);

@@ -28,35 +28,43 @@ class _NotificationsState extends State<Notifications> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: YoutubeColors.black,
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: YoutubeColors.black,
         leading: const BackButton(
-          color: Colors.white,
+          color: YoutubeColors.white,
         ),
         title: const Text(
           "Notifications",
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: YoutubeColors.white),
         ),
         actions: [
           IconButton(
             icon: const Icon(Icons.cast),
-            color: Colors.white,
+            color: YoutubeColors.white,
             onPressed: () => showCastDialog(context),
           ),
           const SizedBox(width: YoutubeSizes.xLarge),
           InkWell(
-              onTap: () => context.pushNamed(Routes.search.name),
-              child: const Icon(Icons.search, color: Colors.white)),
+            onTap: () => context.pushNamed(Routes.search.name),
+            child: const Icon(
+              Icons.search,
+              color: YoutubeColors.white,
+            ),
+          ),
           const SizedBox(width: YoutubeSizes.xLarge),
           InkWell(
-              onTap: () => {
-                    showModalBottomSheet(
-                      context: context,
-                      builder: (context) => _buildBottomSheetNotifications(context),
-                    ),
-                  },
-              child: const Icon(Icons.more_vert, color: Colors.white)),
+            onTap: () => {
+              showModalBottomSheet(
+                context: context,
+                builder: (context) => _buildBottomSheetNotifications(context),
+              ),
+            },
+            child: const Icon(
+              Icons.more_vert,
+              color: YoutubeColors.white,
+            ),
+          ),
         ],
       ),
       body: SingleChildScrollView(
@@ -71,28 +79,33 @@ class _NotificationsState extends State<Notifications> {
             const SizedBox(height: YoutubeSizes.xLarge),
             !isMentions
                 ? Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: YoutubeSizes.xSmall),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: YoutubeSizes.xSmall),
                     child: Column(
                       children: [
                         _buildTitleText(text: "Important"),
                         const NotificationCard(
-                          title: "Marques Brownlee uploaded: Samsung Galaxy S24 Review",
+                          title:
+                              "Marques Brownlee uploaded: Samsung Galaxy S24 Review",
                           timePosted: "1 day ago",
                           imageUrl: "marques",
                         ),
                         const NotificationCard(
-                          title: "ShortCircuit uploaded: My life is now over after this",
+                          title:
+                              "ShortCircuit uploaded: My life is now over after this",
                           timePosted: "2 days ago",
                           imageUrl: "shortcircuit",
                         ),
                         _buildTitleText(text: "Today"),
                         const NotificationCard(
-                          title: "Linus Tech Tips uploaded: This cat6 cable is the best",
+                          title:
+                              "Linus Tech Tips uploaded: This cat6 cable is the best",
                           timePosted: "5 minutes ago",
                           imageUrl: "linus",
                         ),
                         const NotificationCard(
-                          title: "PewDiePie uploaded: I am moving to China next year",
+                          title:
+                              "PewDiePie uploaded: I am moving to China next year",
                           timePosted: "10 minutes ago",
                           imageUrl: "pewdie",
                         ),
@@ -103,12 +116,14 @@ class _NotificationsState extends State<Notifications> {
                           imageUrl: "jamesmay",
                         ),
                         const NotificationCard(
-                          title: "Thailand uploaded: Travel tips for 2024 you need.",
+                          title:
+                              "Thailand uploaded: Travel tips for 2024 you need.",
                           timePosted: "4 days ago",
                           imageUrl: "thailand",
                         ),
                         const NotificationCard(
-                          title: "BigMan2024: I have created a new game finally.",
+                          title:
+                              "BigMan2024: I have created a new game finally.",
                           timePosted: "6 days ago",
                           imageUrl: "bigman",
                         ),
@@ -124,8 +139,19 @@ class _NotificationsState extends State<Notifications> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const SizedBox(height: YoutubeSizes.xLarge * 5),
-                      Text("@", style: TextStyle(color: Colors.grey.shade600, fontSize: 150)),
-                      const Text("No mentions", style: TextStyle(color: Colors.white)),
+                      Text(
+                        "@",
+                        style: TextStyle(
+                          color: Colors.grey.shade600,
+                          fontSize: 150,
+                        ),
+                      ),
+                      const Text(
+                        "No mentions",
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
                     ],
                   ),
           ],
@@ -154,7 +180,10 @@ class _NotificationsState extends State<Notifications> {
       children: [
         Text(
           text,
-          style: const TextStyle(color: YoutubeColors.white, fontSize: 16),
+          style: const TextStyle(
+            color: YoutubeColors.white,
+            fontSize: 16,
+          ),
         ),
       ],
     );

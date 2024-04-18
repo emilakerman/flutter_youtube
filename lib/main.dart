@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:youtube_home_demo/src/ui/pages/_pages.dart';
-import 'package:youtube_home_demo/src/ui/pages/search_page.dart';
 import 'src/_src.dart';
 
 void main() {
@@ -71,12 +69,20 @@ class MainApp extends StatelessWidget {
       ),
       const SizedBox(width: YoutubeSizes.xLarge),
       InkWell(
-          onTap: () => context.goNamed(Routes.notifications.name),
-          child: const Icon(Icons.notifications_none, color: YoutubeColors.white)),
+        onTap: () => context.goNamed(Routes.notifications.name),
+        child: const Icon(
+          Icons.notifications_none,
+          color: YoutubeColors.white,
+        ),
+      ),
       const SizedBox(width: YoutubeSizes.xLarge),
       InkWell(
-          onTap: () => context.goNamed(Routes.search.name),
-          child: const Icon(Icons.search, color: YoutubeColors.white)),
+        onTap: () => context.goNamed(Routes.search.name),
+        child: const Icon(
+          Icons.search,
+          color: YoutubeColors.white,
+        ),
+      ),
       const SizedBox(width: YoutubeSizes.medium),
     ];
 
@@ -164,8 +170,8 @@ class MainApp extends StatelessWidget {
     );
   }
 
-  Widget _buildRowOfShorts(
-      String image1, String image2, String text1, String text2, BuildContext context) {
+  Widget _buildRowOfShorts(String image1, String image2, String text1,
+      String text2, BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -176,7 +182,8 @@ class MainApp extends StatelessWidget {
     );
   }
 
-  Widget _buildShortsCard(String imageString, String text, BuildContext context) {
+  Widget _buildShortsCard(
+      String imageString, String text, BuildContext context) {
     return Stack(
       children: [
         ClipRRect(
