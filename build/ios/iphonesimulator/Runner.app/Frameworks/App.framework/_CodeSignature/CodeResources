@@ -10,11 +10,11 @@
 		</data>
 		<key>flutter_assets/AssetManifest.bin</key>
 		<data>
-		87vYTtgnArrj1dJYhSzY04wrSEQ=
+		p7LnUGQUZZIkF6X5obgoibZRsPY=
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		AJJL3UaXgf2RAxNo8J2U9/CWeJ8=
+		A2RGtSlyXSJ2TTV6v9mrfk8Qoas=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>flutter_assets/NOTICES.Z</key>
 		<data>
-		7yYBPCdPK2M0fOoRTmsHE0BcUWc=
+		f7X/9/tm8Dwab1vc9FwJA69RSGo=
 		</data>
 		<key>flutter_assets/assets/images/.DS_Store</key>
 		<data>
@@ -76,6 +76,10 @@
 		<data>
 		+7VGtbtR28u3FNnH9g7j+IMbtR0=
 		</data>
+		<key>flutter_assets/assets/images/shorts_icon_1.png</key>
+		<data>
+		YvZBaiX7CvwCp2RmuajpYxGKzsw=
+		</data>
 		<key>flutter_assets/assets/images/thailand.jpeg</key>
 		<data>
 		KvCHQwNKtO9PSqD9mjf7xXwolmQ=
@@ -98,11 +102,11 @@
 		</data>
 		<key>flutter_assets/isolate_snapshot_data</key>
 		<data>
-		n/+vZZdlG+SmroMdqYyJv547UxI=
+		iiuuqMV6oM4owJWfpE28hCDbAv8=
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		Rd9mxCEctgAVCRuPc81602mfLqI=
+		qhkzTXUkqa5v40ahUsYjK15A9xE=
 		</data>
 		<key>flutter_assets/packages/font_awesome_flutter/lib/fonts/fa-brands-400.ttf</key>
 		<data>
@@ -122,7 +126,7 @@
 		</data>
 		<key>flutter_assets/vm_snapshot_data</key>
 		<data>
-		al8dGSe8ixX5ozVw95wsqsXICCI=
+		ap40xllbguuMfkV4mJkKh/NQWg4=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -131,14 +135,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			I3udZytnEd6vYLKfyeD9pfpr0g/uqKKIE8dUSBlyvyo=
+			jYMwPw9pxnxb2PVXMkJMGusQ1Uuu8OJE6L+0LEO6xSY=
 			</data>
 		</dict>
 		<key>flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			23f01olcTe6/c2FqFTRDasp9YIc3ZFu90QC66Gzi7f8=
+			OhduZebskpFy/U/XKzEug0VZmVqNWOILuKbFFBfL48o=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -152,7 +156,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			V0ff2Z+0K59dLVIvdqW6g1gaj+1Ou6UcOdBbclPSmZQ=
+			kBYR2NgxpTFhmZvLZAgLJqOy8ljDufu6BqUSdiEu/qw=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/images/Youtube_shorts_icon.svg.png</key>
@@ -239,6 +243,13 @@
 			nUlEfqVi7yAtNMKABC7QgtgiLqPBdBaGxkSrWxxVNEg=
 			</data>
 		</dict>
+		<key>flutter_assets/assets/images/shorts_icon_1.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			HbbEph3w8sif44uKYWwfps0DdRemqze5bJjPSPV0TJY=
+			</data>
+		</dict>
 		<key>flutter_assets/assets/images/thailand.jpeg</key>
 		<dict>
 			<key>hash2</key>
@@ -278,14 +289,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			KgVWqcCELDXmM9JFKm+krgdxtqzw3dl71pwAfLh+Hsk=
+			uWxb3nBXN5pmBgye1a+qjBFyUEcqh/MzcJMSPkV4q/Y=
 			</data>
 		</dict>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			tvg04u/AgeBeg0UWZeuTe3SZvLIcQC+IPwTn4bvBTrE=
+			UwX4NjfVES3OY9EJqoNmeUDX0QZxxOEmWTfuM/cWeZc=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/font_awesome_flutter/lib/fonts/fa-brands-400.ttf</key>
@@ -320,7 +331,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			jixP+QQx/G5CVcy0dr1g7GoBOdAm+ZD+RQn6Z0ul3uU=
+			6eubeZZqyUNzwtBtT1r66GIIirzwERUZET0Gp6oe/CI=
 			</data>
 		</dict>
 	</dict>
