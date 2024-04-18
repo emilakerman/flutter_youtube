@@ -11,22 +11,22 @@ class SearchRowItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Icon(
+        const Icon(
           Icons.history_rounded,
           color: Colors.white,
           size: 25,
         ),
-        SizedBox(width: 25),
+        const SizedBox(width: 25),
         Text(
           title,
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.w600,
             fontSize: 16,
           ),
         ),
-        Spacer(),
-        Row(
+        const Spacer(),
+        const Row(
           children: [
             SizedBox(
               height: 50,

@@ -19,7 +19,7 @@ class VoiceControlAlert extends StatelessWidget {
               padding: const EdgeInsets.only(left: 15.0),
               child: Column(
                 children: [
-                  SizedBox(height: 30),
+                  const SizedBox(height: 30),
                   Row(
                     children: [
                       IconButton(
@@ -31,7 +31,7 @@ class VoiceControlAlert extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: 15),
+                  const SizedBox(height: 15),
                   Row(
                     children: [
                       Padding(
@@ -49,37 +49,37 @@ class VoiceControlAlert extends StatelessWidget {
                 ],
               ),
             ),
-            Spacer(),
+            const Spacer(),
             AvatarGlow(
               glowColor: Colors.red,
               // endRadius: 90.0,
-              duration: Duration(milliseconds: 2000),
+              duration: const Duration(milliseconds: 2000),
               repeat: true,
               // showTwoGlows: true,
               // repeatPauseDuration: Duration(milliseconds: 100),
-              child: Material(
+              child: const Material(
                 // Replace this child with your own
                 elevation: 8.0,
                 shape: CircleBorder(),
                 child: CircleAvatar(
                   backgroundColor: Color(0xff272727),
+                  radius: 40.0,
                   child: Icon(
                     Icons.mic,
                     color: Colors.white,
                     size: 40,
                   ),
-                  radius: 40.0,
                 ),
               ),
             ),
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             Text(
               'Tap the microphone to try again',
               style: TextStyle(
                 color: Colors.grey[200],
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
           ],
         ),
       ),

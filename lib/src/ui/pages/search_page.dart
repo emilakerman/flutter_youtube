@@ -38,10 +38,10 @@ class _SearchPageState extends State<SearchPage> {
         ),
         actions: [
           Padding(
-            padding: EdgeInsets.only(right: 15.0),
+            padding: const EdgeInsets.only(right: 15.0),
             child: Stack(
               children: [
-                CircleAvatar(backgroundColor: Color(0xff272727)),
+                const CircleAvatar(backgroundColor: Color(0xff272727)),
                 Positioned(
                   left: 0,
                   right: 0,
@@ -50,7 +50,7 @@ class _SearchPageState extends State<SearchPage> {
                   // TODO(Any): Change to iconbutton with alert?
                   child: InkWell(
                       onTap: () => showVoiceControlDialogue(context),
-                      child: Icon(Icons.mic, color: YoutubeColors.white)),
+                      child: const Icon(Icons.mic, color: YoutubeColors.white)),
                 ),
               ],
             ),

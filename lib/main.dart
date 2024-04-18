@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:youtube_home_demo/src/ui/pages/_pages.dart';
-import 'package:youtube_home_demo/src/ui/pages/search_page.dart';
 import 'src/_src.dart';
 
 void main() {
